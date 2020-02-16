@@ -45,7 +45,7 @@ class DataList(object):
         user_features['DownVotes'] = post_DownVotes
         return user_features
 
-    def get_user_data_all(self):
+    def get_feature_set_with_lable(self):
         for i in self.key_list:
             post_Score = 0
             post_text_len = 0
@@ -158,10 +158,11 @@ class DataList(object):
             elif (lable_val_max-lable_val_min)*0.75+lable_val_min > lable_val and lable_val>(lable_val_max-lable_val_min)*0.5+lable_val_min:
                 normalize_features_list[i].append('advanced')
 
-            elif (lable_val_max-lable_val_min)*0.5+lable_val_min > lable_val and lable_val>(lable_val_max-lable_val_min)*0.4+lable_val_min:
+            elif (lable_val_max-lable_val_min)*0.5+lable_val_min > lable_val and lable_val>(lable_val_max-lable_val_min)*0.25+lable_val_min:
                 normalize_features_list[i].append('intermediate')
 
-            elif (lable_val_max-lable_val_min)*0.4+lable_val_min > lable_val and lable_val>0:
+            elif (lable_val_max-lable_val_min)*0.25+lable_val_min > lable_val and lable_val>0:
                 normalize_features_list[i].append('beginner')
         print(normalize_features_list)
+
 
