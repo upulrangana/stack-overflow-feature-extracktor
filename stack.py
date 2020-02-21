@@ -112,13 +112,13 @@ class DataList(object):
         normalize_features_list = []
         lable_list = []
         for i in self.users_dict.keys():
-            reputation_weight = 1
-            view_weight = 1
+            reputation_weight = 3
+            view_weight = 2
             upvote_weight = 1
-            downvote_weight = 1
-            post_score_val_weight = 1
-            post_text_val_weight = 1
-            create_date_yr_weight = 1
+            downvote_weight = 0.2
+            post_score_val_weight = 0
+            post_text_val_weight = 2
+            create_date_yr_weight = 2
             normalize_feature_list = []
             normalize_feature_list.append(
                 reputation_weight * normalize('Reputation', i, reputation_list_max, reputation_list_min))
